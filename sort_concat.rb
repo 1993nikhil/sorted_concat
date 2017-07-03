@@ -38,8 +38,12 @@ class Array
     array[x] = array[y]
     array[y] = temp
   end
+  
   def method_missing(name, args)
-    self.sorted_concat(args)
+    string_name = name.to_s
+    if string_name =~ /^sorted_concat\w+/
+      self.sorted_concat(args)
+    end
   end
 
 end
