@@ -38,6 +38,9 @@ class Array
     array[x] = array[y]
     array[y] = temp
   end
+  def method_missing(name, args)
+    self.sorted_concat(args)
+  end
 
 end
 
