@@ -1,14 +1,12 @@
-def sorted_concat(array1,array2)
-  array2.each { |array| array1 << array }
-
-  quicksort(array1, 0, array1.count)
-
-  array1
+class Array
   
-
-end
-
-def quicksort(array, low, high) 
+ def sorted_concat(array2)
+      array2.each { |array| self << array }
+      quicksort(self, 0, self.count)
+      self
+    end
+  
+  def quicksort(array, low, high) 
 
     if low >= high
         return
@@ -32,14 +30,17 @@ def quicksort(array, low, high)
     quicksort(array, low, left - 1)
     quicksort(array, left, high)
 
-end
+  end
 
-def swap(array, x, y)
+  def swap(array, x, y)
   
-  temp = array[x]
-  array[x] = array[y]
-  array[y] = temp
+    temp = array[x]
+    array[x] = array[y]
+    array[y] = temp
+  end
+
 end
 
-arr = sorted_concat([4,6,8],[7,5,3])
+array = Array.new([4,6,8])	
+arr = array.sorted_concat([7,5,3])
 puts arr
