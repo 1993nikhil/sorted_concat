@@ -1,0 +1,10 @@
+class Array
+
+  class << self
+    def sorted_concat(b)
+      c = self + b
+      result = c.sort()
+    end
+  end
+
+end
