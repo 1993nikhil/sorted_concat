@@ -41,6 +41,5 @@ class Array
 
 end
 
-array = Array.new([4,6,8])	
-arr = array.sorted_concat([7,5,3])
+arr = [4,6,8].sorted_concat([7,5,3])
 puts arr
